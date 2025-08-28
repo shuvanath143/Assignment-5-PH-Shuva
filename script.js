@@ -79,10 +79,10 @@ for (const callButton of callButtons) {
       <div class="flex justify-between items-center mx-3 sm:mx-5 p-4 my-2 text-sm sm:text-base bg-[#fafafa]">
         <div>
             <h1 class="mb-1 font-medium">${callData.serviceName}</h1>
-            <p class="text-[#5c5c5c]">${callData.emergencyHotLineNumber}</p>
+            <p class="text-[#5c5c5c] text-xs">${callData.emergencyHotLineNumber}</p>
         </div>
         <div>
-            <p class="text-[#111111]">${callData.time}</p>
+            <p class="text-[#111111] text-xs">${callData.time}</p>
         </div>
       </div>
 
