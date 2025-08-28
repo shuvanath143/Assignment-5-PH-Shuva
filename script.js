@@ -98,3 +98,31 @@ getElem("clearButton").addEventListener("click", function () {
     div.remove();
   }
 });
+
+// ..........................CopyCount & Copy Section..........................
+
+const copyCount = () => {
+  const copyCounts = getInnerValue("nav-copy") + 1;
+  // console.log(heartCounts);
+  setInnerText("nav-copy", copyCounts);
+};
+
+const allCopyButtons = document.querySelectorAll(".copyBtn");
+
+for (const button of allCopyButtons) {
+  button.addEventListener("click", function () {
+    copyCount();
+    // console.log(button.parentNode);
+    const hotLineNumber =
+      button.parentNode.parentNode.querySelector("h1").innerText;
+    console.log(hotLineNumber);
+    navigator.clipboard
+      .writeText(hotLineNumber)
+      .then(() => {
+        alert(`Number has been copied: ${hotLineNumber}`);
+      })
+      .catch(() => {
+        alert("An error has been occurred named: " + err);
+      });
+  });
+}
